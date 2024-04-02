@@ -1,4 +1,5 @@
 import { OrderItem } from 'src/order/domain/entity/order-item.entity';
+import { OrderStatus } from 'src/order/types/order.types';
 import {
   Column,
   CreateDateColumn,
@@ -38,7 +39,7 @@ export class Order {
   shippingAddressSetAt: Date | null;
 
   @Column()
-  status: string;
+  status: OrderStatus = OrderStatus.CART;
 
   @Column({ nullable: true })
   paidAt: Date;
